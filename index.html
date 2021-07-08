@@ -31,17 +31,57 @@
       </figure>
     </header>
     <nav class="menuNav">
-      <a class="menuNav__active" href="#"
-        >Hébergements</a
-      >
-      <a class="menuNav__content" href="#"
-        >Activités</a
-      >
+      <a class="menuNav__active" href="#">Hébergements</a>
+      <a class="menuNav__content" href="#">Activités</a>
     </nav>
     <nav class="logNav">
-      <a class="logNav__log" href="#"
-        >S'inscrire</a
-      >
+      <a class="logNav__log" href="#">S'inscrire</a>
     </nav>
+
+    <!--Section de recherche-->
+
+    <section class="search">
+      <h1 class="search__title">
+        Trouvez votre hébergement pour des vacances de rêve
+      </h1>
+      <p class="search__paragraphe">
+        En plein centre ville ou en pleine nature
+      </p>
+      <form class="search__town" method="post" action="#">
+        <a href="#" class="search__town--lien">
+          <i class="search__town--icon fas fa-map-marker-alt"></i>
+        </a>
+        <input
+          class="search__town--saisie"
+          type="text"
+          placeholder="Marseille, France"
+        />
+        <button class="search__town--recherche" type="submit">
+          Rechercher
+        </button>
+      </form>
+      <form class="search__filters" method="post" action="#">
+        <i class="search__filters--icon fas fa-money-bill-wave"></i>
+        <input id="eco" type="checkbox" name="filtre" value="Économiques" />
+        <label for="eco">Économiques</label>
+
+        <i class="search__filters--icon fas fa-child"></i>
+        <input id="fam" type="checkbox" name="filtre" value="Familial" />
+        <label for="fam">Familial</label>
+
+        <i class="search__filters--icon fas fa-heart"></i>
+        <input id="love" type="checkbox" name="filtre" value="Romantique" />
+        <label for="love">Romantique</label>
+
+        <i class="search__filters--icon fas fa-dog"></i>
+        <input
+          id="animal"
+          type="checkbox"
+          name="filtre"
+          value="Animaux autorisés"
+        />
+        <label for="animal">Animaux autorisés</label>
+      </form>
+    </section>
   </body>
 </html>
