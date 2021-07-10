@@ -16,7 +16,7 @@
     <title>Projet 2 Openclassrooms</title>
   </head>
   <body class="container">
-    
+
     <!--header-->
 
     <header class="siteHeader">
@@ -30,58 +30,112 @@
         </a>
       </figure>
     </header>
+
+    <!--Menu de navigation-->
+
     <nav class="menuNav">
       <a class="menuNav__active" href="#">Hébergements</a>
       <a class="menuNav__content" href="#">Activités</a>
     </nav>
+
+    <!--lien vers le login-->
+
     <nav class="logNav">
       <a class="logNav__log" href="#">S'inscrire</a>
     </nav>
 
-    <!--Section de recherche-->
+    <main><!--contenu principale de la page-->
 
-    <section class="search">
-      <h1 class="search__title">
-        Trouvez votre hébergement pour des vacances de rêve
-      </h1>
-      <p class="search__paragraphe">
-        En plein centre ville ou en pleine nature
-      </p>
-      <form class="search__town" method="post" action="#">
-        <a href="#" class="search__town--lien">
-          <i class="search__town--icon fas fa-map-marker-alt"></i>
-        </a>
-        <input
-          class="search__town--saisie"
-          type="text"
-          placeholder="Marseille, France"
-        />
-        <button class="search__town--recherche" type="submit">
-          Rechercher
-        </button>
-      </form>
-      <form class="search__filters" method="post" action="#">
-        <i class="search__filters--icon fas fa-money-bill-wave"></i>
-        <input id="eco" type="checkbox" name="filtre" value="Économiques" />
-        <label for="eco">Économiques</label>
+      <!--Section de recherche-->
 
-        <i class="search__filters--icon fas fa-child"></i>
-        <input id="fam" type="checkbox" name="filtre" value="Familial" />
-        <label for="fam">Familial</label>
+      <section class="search">
 
-        <i class="search__filters--icon fas fa-heart"></i>
-        <input id="love" type="checkbox" name="filtre" value="Romantique" />
-        <label for="love">Romantique</label>
+        <h1 class="search__titre">
+          Trouvez votre hébergement pour des vacances de rêve
+        </h1>
 
-        <i class="search__filters--icon fas fa-dog"></i>
-        <input
-          id="animal"
-          type="checkbox"
-          name="filtre"
-          value="Animaux autorisés"
-        />
-        <label for="animal">Animaux autorisés</label>
-      </form>
-    </section>
+        <p class="search__paragraphe">
+          En plein centre ville ou en pleine nature
+        </p>
+
+        <form class="search__town" method="post" action="#">
+          <a href="#" class="search__town--lien">
+            <i class="search__town--icon fas fa-map-marker-alt"></i>
+          </a>
+
+          <input
+            class="search__town--saisie"
+            type="text"
+            placeholder="Marseille, France"
+          />
+
+          <button class="search__town--recherche" type="submit">
+            Rechercher
+          </button>
+        </form>
+
+        <form class="search__filters" method="post" action="#">
+
+          <p class="search__filters--titre">Filtres</p>
+
+          <p class="search__filters--themes">
+            <i class="search__filters--icon fas fa-money-bill-wave"></i>
+            <input
+              class="search__filters--in"
+              id="eco"
+              type="checkbox"
+              name="filtre"
+              value="Économiques"
+            />
+            <label class="search__filters--lbl" for="eco">Économiques</label>
+          </p>
+
+          <p class="search__filters--themes">
+            <i class="search__filters--icon fas fa-child"></i>
+            <input
+              class="search__filters--in"
+              id="fam"
+              type="checkbox"
+              name="filtre"
+              value="Familial"
+            />
+            <label class="search__filters--lbl" for="fam">Familial</label>
+          </p>
+
+          <p class="search__filters--themes">
+            <i class="search__filters--icon fas fa-heart"></i>
+            <input
+              class="search__filters--in"
+              id="love"
+              type="checkbox"
+              name="filtre"
+              value="Romantique"
+            />
+            <label class="search__filters--lbl" for="love">Romantique</label>
+          </p>
+
+          <p class="search__filters--themes">
+            <i class="search__filters--icon fas fa-dog"></i>
+            <input
+              class="search__filters--in"
+              id="animal"
+              type="checkbox"
+              name="filtre"
+              value="Animaux autorisés"
+            />
+            <label class="search__filters--lbl" for="animal"
+              >Animaux autorisés</label
+            >
+          </p>
+
+          <p class="search__filters--infos">
+            <i class="fas fa-info"></i> Plus de 500 logements sont disponibles dans cette ville
+          </p>
+
+        </form>
+
+      </section>
+
+    </main>
   </body>
 </html>
