@@ -1,4 +1,4 @@
-/* Général */
+/*------------------------------------Général--------------------------------------------------*/
 
 *,
 *::before,
@@ -19,15 +19,29 @@ body {
   background-color: #fff;
 }
 
+h1{
+  font-size: 2.1rem;
+  font-weight: 600;
+}
+
+h2{
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+nav, p{
+  font-size: 1.5rem;
+}
+
 a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
-  cursor: pointer;
 }
 
-a:hover {
+a:hover, .search__town--lien:hover, .search__town--recherche:hover {
   color: #0065fc;
+  cursor: pointer;
 }
 
 .container {
@@ -36,26 +50,26 @@ a:hover {
   margin: auto;
   display: grid;
   grid-template-columns: 2.6fr 2.4fr 1.6fr 11rem 20rem 18rem;
-  grid-template-rows: 11rem;
-  grid-template-areas: "header header header menuNav menuNav logNav";
+  grid-template-rows: 11rem 30rem;
+  grid-template-areas: "header header header menuNav menuNav logNav"
+                       "sectionRecherche sectionRecherche sectionRecherche sectionRecherche sectionRecherche sectionRecherche";
 }
 
-/* Header */
+/*------------------------------------Header------------------------------------*/
 
 header {
   padding: 5rem 5rem 2rem;
   grid-area: header;
 }
 
-/* Menu de navigation et Lien vers Login */
+/*-----------------------------Menu de navigation et Lien vers Login-------------------------------------*/
 
-nav {
-  font-size: 1.6rem;
-}
 .menuNav {
   grid-area: menuNav;
 }
-.menuNav__active,
+.menuNav__active{
+  padding: 5rem 3rem 4rem 4rem;
+}
 .menuNav__content,
 .logNav__log {
   text-align: center;
@@ -67,7 +81,7 @@ nav {
 }
 .logNav__log {
   color: #0065fc;
-  font-weight: bold;
+  font-weight: 600;
 }
 .menuNav__content:hover,
 .menuNav__active:hover,
@@ -83,20 +97,27 @@ nav {
     align-items: center;
     justify-content: flex-start;
   }
-  .menuNav__active,
+  .menuNav__active{
+    padding: 4.5rem 3rem 3rem 4rem;
+  }
   .menuNav__content,
   .logNav__log {
     padding: 4.5rem 3rem 3rem;
+  }
+
+  .search__filters--themes{
+    margin: 0 1rem 1.5rem;
   }
 }
 
 @media (max-width: 767px) {
   .container {
     grid-template-columns: 5fr 1fr;
-    grid-template-rows: 10rem 3rem;
+    grid-template-rows: 10rem 3rem 55rem;
     grid-template-areas:
       "header logNav"
-      "menuNav menuNav";
+      "menuNav menuNav"
+      "sectionRecherche sectionRecherche";
   }
   header {
     padding: 0 2rem 2rem 2rem;
@@ -104,14 +125,18 @@ nav {
   .logNav__log {
     padding: 3rem 2rem 2rem 2rem;
   }
-  .menuNav {
+  .menuNav, .menuNav__active,
+  .menuNav__content {
     display: flex;
     align-items: center;
+  }
+  .menuNav {
     justify-content: space-evenly;
     border-bottom: 0.2rem solid #f2f2f2;
   }
   .menuNav__active,
   .menuNav__content {
+    justify-content: center;
     padding: 0rem 2rem 1.15rem;
     width: 50%;
   }
@@ -122,3 +147,174 @@ nav {
     border-bottom: 0.2rem solid #0065fc;
   }
 }
+
+/*----------------------------------------------------Section de recherche------------------------------------------------*/
+
+/*--------------------------Section de recherche par ville----------------------------------*/
+
+.search{
+  grid-area: sectionRecherche;
+  padding: 2rem 5rem;
+}
+
+h1, p{
+  margin: 0.5rem;
+}
+
+.search__town{
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0.5rem;
+  width: 39.5rem;
+  border-radius: 1.5rem;
+  border-top: 0.1rem solid #f2f2f2;
+  border-bottom: 0.1rem solid #f2f2f2;
+}
+
+.search__town, .search__town--lien, .search__town--recherche{
+  height: 5rem;
+}
+
+.search__town--lien, .search__town--recherche{
+  text-align: center;
+}
+
+.search__town--saisie, .search__town--recherche{
+  border: none;
+  font-size: 1.6rem;
+}
+
+.search__town--lien{
+  padding-top: 0.8rem;
+  font-size: 2.5rem;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+  width: 5rem;
+  background-color: #f2f2f2;
+}
+
+.search__town--saisie{
+  width: 22.5rem;
+  height: 4.8rem;
+  padding-left: 2rem;
+  color: black;
+  font-weight: 600;
+}
+
+.search__town--recherche .fa-search{
+  display: none;
+}
+
+.search__town--recherche{
+  background-color: #0065fc;
+  font-weight: 400;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  width:12rem;
+  color:#fff;
+}
+
+.search__town--lien:hover, .search__town--recherche:hover{
+  background-color: #DEEBFF;
+}
+
+@media (max-width: 767px){
+  .search{
+    padding: 2rem 2rem;
+  }
+  .search__town{
+    width: 32.5rem;
+  }
+  .search__town--recherche span{
+    display: none;
+  }
+  .search__town--recherche .fa-search{
+    display: inline-block;
+    font-size: 2.5rem;
+  }
+  .search__town--recherche{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 5rem;
+    border-radius: 1.5rem;
+  }
+}
+
+/*-----------------------------Section de recherche par filtres-------------------------------------------*/
+
+.search__filters, .search__filters--themes, .search__filters--lien, .search__filters--icon {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+}
+
+.search__filters{
+  margin: 3rem 0;
+}
+.search__filters--titre{
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto 1rem;
+}
+.search__filters--categories{
+  display: flex;
+}
+.search__filters--themes{
+  margin: 0 1.25rem 1.5rem;
+  padding-right: 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: 0.2rem solid #f2f2f2;
+  border-left: 0;
+  border-radius: 5rem;
+}
+
+.search__filters--lien{
+  width: 5rem;
+  background-color: #DEEBFF;
+  border-radius: 5rem;
+}
+
+.search__filters--icon{
+  margin: auto;
+  font-size: 2.2rem;
+  color: #0065fc;
+}
+
+.search__filters--in{
+  visibility: hidden;
+}
+
+
+
+/*----------------------------------------Section de recherche infos--------------------------------------*/
+
+.search__filters--infos, .search__filters--infosLien{
+  display: flex;
+  align-items: center;
+}
+
+.search__filters--infos{
+  margin: 0 .5rem;
+}
+
+.search__filters--infosLien{
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 0.1rem solid #f2f2f2;
+  border-radius: 2.2rem;
+  margin-right: 1.25rem;
+}
+
+.search__filters--infosIcon{
+  display: flex;
+  margin: auto;
+  font-size: 1.3rem;
+  color: #0065fc;
+}
+
+
+
+

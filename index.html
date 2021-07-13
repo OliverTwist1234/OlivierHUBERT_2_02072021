@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
@@ -16,7 +16,6 @@
     <title>Projet 2 Openclassrooms</title>
   </head>
   <body class="container">
-
     <!--header-->
 
     <header class="siteHeader">
@@ -44,42 +43,48 @@
       <a class="logNav__log" href="#">S'inscrire</a>
     </nav>
 
-    <main><!--contenu principale de la page-->
+    <!--Section de recherche-->
 
-      <!--Section de recherche-->
+    <!-- Section de recherche par ville et pays-->
 
-      <section class="search">
+    <section class="search">
+      <h1 class="search__titre">
+        Trouvez votre hébergement pour des vacances de rêve
+      </h1>
 
-        <h1 class="search__titre">
-          Trouvez votre hébergement pour des vacances de rêve
-        </h1>
+      <p class="search__paragraphe">
+        En plein centre ville ou en pleine nature
+      </p>
 
-        <p class="search__paragraphe">
-          En plein centre ville ou en pleine nature
-        </p>
+      <form class="search__town" method="post" action="#">
+        <a href="#" class="search__town--lien">
+          <i class="search__town--icon fas fa-map-marker-alt"></i>
+        </a>
 
-        <form class="search__town" method="post" action="#">
-          <a href="#" class="search__town--lien">
-            <i class="search__town--icon fas fa-map-marker-alt"></i>
-          </a>
+        <input
+          class="search__town--saisie"
+          type="text"
+          placeholder="Ex : Ville, Pays"
+        />
 
-          <input
-            class="search__town--saisie"
-            type="text"
-            placeholder="Marseille, France"
-          />
+        <button class="search__town--recherche" type="submit">
+          <i class="fas fa-search"></i>
+          <span>Rechercher</span>
+        </button>
+      </form>
 
-          <button class="search__town--recherche" type="submit">
-            Rechercher
-          </button>
-        </form>
+      <!--Section de recherche par filtres-->
 
-        <form class="search__filters" method="post" action="#">
+      <form class="search__filters" method="post" action="#">
 
-          <p class="search__filters--titre">Filtres</p>
+        <h2 class="search__filters--titre">Filtres</h2>
+
+        <div class="search__filters--categories">
 
           <p class="search__filters--themes">
-            <i class="search__filters--icon fas fa-money-bill-wave"></i>
+            <a href="" class="search__filters--lien">
+              <i class="search__filters--icon fas fa-money-bill-wave"></i>
+            </a>
             <input
               class="search__filters--in"
               id="eco"
@@ -87,11 +92,13 @@
               name="filtre"
               value="Économiques"
             />
-            <label class="search__filters--lbl" for="eco">Économiques</label>
+            <label class="search__filters--lbl" for="eco">Économique</label>
           </p>
 
           <p class="search__filters--themes">
-            <i class="search__filters--icon fas fa-child"></i>
+            <a href="" class="search__filters--lien">
+              <i class="search__filters--icon fas fa-child"></i>
+            </a>
             <input
               class="search__filters--in"
               id="fam"
@@ -103,7 +110,9 @@
           </p>
 
           <p class="search__filters--themes">
-            <i class="search__filters--icon fas fa-heart"></i>
+            <a href="" class="search__filters--lien">
+              <i class="search__filters--icon fas fa-heart"></i>
+            </a>
             <input
               class="search__filters--in"
               id="love"
@@ -115,7 +124,9 @@
           </p>
 
           <p class="search__filters--themes">
-            <i class="search__filters--icon fas fa-dog"></i>
+            <a href="" class="search__filters--lien">
+              <i class="search__filters--icon fas fa-dog"></i>
+            </a>
             <input
               class="search__filters--in"
               id="animal"
@@ -127,15 +138,17 @@
               >Animaux autorisés</label
             >
           </p>
+        </div>
+      </form>
 
-          <p class="search__filters--infos">
-            <i class="fas fa-info"></i> Plus de 500 logements sont disponibles dans cette ville
-          </p>
+      <!--Section de recherche infos-->
 
-        </form>
-
-      </section>
-
-    </main>
+      <p class="search__filters--infos">
+        <a href="" class="search__filters--infosLien">
+          <i class="search__filters--infosIcon fas fa-info"></i>
+        </a>
+        Plus de 500 logements sont disponibles dans cette ville
+      </p>
+    </section>
   </body>
 </html>
