@@ -20,17 +20,17 @@ body {
 }
 
 h1{
-  font-size: 2.1rem;
+  font-size: 2.2rem;
   font-weight: 600;
 }
 
 h2{
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 600;
 }
 
 nav, p{
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 a {
@@ -50,17 +50,20 @@ a:hover, .search__town--lien:hover, .search__town--recherche:hover {
   margin: auto;
   display: grid;
   grid-template-columns: 2.6fr 2.4fr 1.6fr 11rem 20rem 18rem;
-  grid-template-rows: 11rem 30rem;
+  grid-template-rows: 11rem 16rem 6rem 6rem;
   grid-template-areas: "header header header menuNav menuNav logNav"
-                       "sectionRecherche sectionRecherche sectionRecherche sectionRecherche sectionRecherche sectionRecherche";
+                       "recherche recherche recherche recherche recherche recherche"
+                       "filtres filtres filtres filtres filtres filtres"
+                       "filtresInfos filtresInfos filtresInfos filtresInfos filtresInfos filtresInfos";
 }
 
 /*------------------------------------Header------------------------------------*/
 
-header {
-  padding: 5rem 5rem 2rem;
+.siteHeader {
+  padding: 4rem 5rem;
   grid-area: header;
 }
+
 
 /*-----------------------------Menu de navigation et Lien vers Login-------------------------------------*/
 
@@ -90,8 +93,8 @@ header {
 }
 
 @media (max-width: 1199px) {
-  header {
-    padding: 2rem 6rem;
+  .siteHeader {
+    padding: 2rem 5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -111,19 +114,12 @@ header {
 }
 
 @media (max-width: 767px) {
-  .container {
-    grid-template-columns: 5fr 1fr;
-    grid-template-rows: 10rem 3rem 55rem;
-    grid-template-areas:
-      "header logNav"
-      "menuNav menuNav"
-      "sectionRecherche sectionRecherche";
-  }
+  
   header {
     padding: 0 2rem 2rem 2rem;
   }
   .logNav__log {
-    padding: 3rem 2rem 2rem 2rem;
+    padding: 4rem 2rem 2rem 2rem;
   }
   .menuNav, .menuNav__active,
   .menuNav__content {
@@ -153,8 +149,8 @@ header {
 /*--------------------------Section de recherche par ville----------------------------------*/
 
 .search{
-  grid-area: sectionRecherche;
-  padding: 2rem 5rem;
+  grid-area: recherche;
+  padding: 1.5rem 5rem;
 }
 
 h1, p{
@@ -243,72 +239,72 @@ h1, p{
 }
 
 /*-----------------------------Section de recherche par filtres-------------------------------------------*/
-
-.search__filters, .search__filters--themes, .search__filters--lien, .search__filters--icon {
+ 
+.filters, .filters__titre, .filters__themes, .filters__lien, .filters__icon {
   display: flex;
   align-items: center;
   height: 5rem;
 }
 
-.search__filters{
-  margin: 3rem 0;
+.filters{
+  grid-area: filtres;
+  padding: 0rem 5rem;
 }
-.search__filters--titre{
-  top: 50%;
-  transform: translateY(-50%);
-  margin: auto 1rem;
+.filters__titre{
+  padding-left: 1rem;
+  margin-right: 2.5rem;
 }
-.search__filters--categories{
+.filters__categories{
   display: flex;
 }
-.search__filters--themes{
-  margin: 0 1.25rem 1.5rem;
+.filters__themes{
   padding-right: 2rem;
-  font-size: 1.6rem;
+  margin-right: 2.5rem;
+  font-size: 1.7rem;
   font-weight: 600;
   border: 0.2rem solid #f2f2f2;
   border-left: 0;
   border-radius: 5rem;
 }
 
-.search__filters--lien{
+.filters__lien{
   width: 5rem;
   background-color: #DEEBFF;
   border-radius: 5rem;
 }
 
-.search__filters--icon{
+.filters__icon{
   margin: auto;
   font-size: 2.2rem;
   color: #0065fc;
 }
 
-.search__filters--in{
+.filters__in{
   visibility: hidden;
 }
 
+/*---------------------Filtres infos-----------------------------------------*/
 
-
-/*----------------------------------------Section de recherche infos--------------------------------------*/
-
-.search__filters--infos, .search__filters--infosLien{
+.filters__infos, .filters__infos--lien{
   display: flex;
   align-items: center;
 }
 
-.search__filters--infos{
-  margin: 0 .5rem;
+.filters__infos{
+  grid-area: filtresInfos;
+  padding: 0rem 5rem;
 }
 
-.search__filters--infosLien{
+.filters__infos--lien{
   width: 2.2rem;
   height: 2.2rem;
+  margin-left: 1rem;
   border: 0.1rem solid #f2f2f2;
   border-radius: 2.2rem;
-  margin-right: 1.25rem;
+  margin-right: .5rem;
 }
 
-.search__filters--infosIcon{
+.filters__infos--icon{
   display: flex;
   margin: auto;
   font-size: 1.3rem;

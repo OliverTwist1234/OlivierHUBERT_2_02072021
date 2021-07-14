@@ -43,8 +43,6 @@
       <a class="logNav__log" href="#">S'inscrire</a>
     </nav>
 
-    <!--Section de recherche-->
-
     <!-- Section de recherche par ville et pays-->
 
     <section class="search">
@@ -72,83 +70,83 @@
           <span>Rechercher</span>
         </button>
       </form>
+    </section>
 
-      <!--Section de recherche par filtres-->
+    <!--Section de recherche par filtres-->
 
-      <form class="search__filters" method="post" action="#">
+    <section class="filters">
+      <h2 class="filters__titre">Filtres</h2>
 
-        <h2 class="search__filters--titre">Filtres</h2>
+      <form class="filters__categories" method="post" action="#">
+        <p class="filters__themes">
+          <a href="" class="filters__lien">
+            <i class="filters__icon fas fa-money-bill-wave"></i>
+          </a>
+          <input
+            class="filters__in"
+            id="eco"
+            type="checkbox"
+            name="filtre"
+            value="Économiques"
+          />
+          <label class="filters__lbl" for="eco">Économique</label>
+        </p>
 
-        <div class="search__filters--categories">
+        <p class="filters__themes">
+          <a href="" class="filters__lien">
+            <i class="filters__icon fas fa-child"></i>
+          </a>
+          <input
+            class="filters__in"
+            id="fam"
+            type="checkbox"
+            name="filtre"
+            value="Familial"
+          />
+          <label class="filters__lbl" for="fam">Familial</label>
+        </p>
 
-          <p class="search__filters--themes">
-            <a href="" class="search__filters--lien">
-              <i class="search__filters--icon fas fa-money-bill-wave"></i>
-            </a>
-            <input
-              class="search__filters--in"
-              id="eco"
-              type="checkbox"
-              name="filtre"
-              value="Économiques"
-            />
-            <label class="search__filters--lbl" for="eco">Économique</label>
-          </p>
+        <p class="filters__themes">
+          <a href="" class="filters__lien">
+            <i class="filters__icon fas fa-heart"></i>
+          </a>
+          <input
+            class="filters__in"
+            id="love"
+            type="checkbox"
+            name="filtre"
+            value="Romantique"
+          />
+          <label class="filters__lbl" for="love">Romantique</label>
+        </p>
 
-          <p class="search__filters--themes">
-            <a href="" class="search__filters--lien">
-              <i class="search__filters--icon fas fa-child"></i>
-            </a>
-            <input
-              class="search__filters--in"
-              id="fam"
-              type="checkbox"
-              name="filtre"
-              value="Familial"
-            />
-            <label class="search__filters--lbl" for="fam">Familial</label>
-          </p>
+        <p class="filters__themes">
+          <a href="" class="filters__lien">
+            <i class="filters__icon fas fa-dog"></i>
+          </a>
+          <input
+            class="filters__in"
+            id="animal"
+            type="checkbox"
+            name="filtre"
+            value="Animaux autorisés"
+          />
+          <label class="filters__lbl" for="animal">Animaux autorisés</label>
+        </p>
 
-          <p class="search__filters--themes">
-            <a href="" class="search__filters--lien">
-              <i class="search__filters--icon fas fa-heart"></i>
-            </a>
-            <input
-              class="search__filters--in"
-              id="love"
-              type="checkbox"
-              name="filtre"
-              value="Romantique"
-            />
-            <label class="search__filters--lbl" for="love">Romantique</label>
-          </p>
-
-          <p class="search__filters--themes">
-            <a href="" class="search__filters--lien">
-              <i class="search__filters--icon fas fa-dog"></i>
-            </a>
-            <input
-              class="search__filters--in"
-              id="animal"
-              type="checkbox"
-              name="filtre"
-              value="Animaux autorisés"
-            />
-            <label class="search__filters--lbl" for="animal"
-              >Animaux autorisés</label
-            >
-          </p>
-        </div>
       </form>
 
-      <!--Section de recherche infos-->
+    </section>
 
-      <p class="search__filters--infos">
-        <a href="" class="search__filters--infosLien">
-          <i class="search__filters--infosIcon fas fa-info"></i>
-        </a>
+    <!--Filtres infos-->
+    
+    <article class="filters__infos">
+      <a href="" class="filters__infos--lien">
+        <i class="filters__infos--icon fas fa-info"></i>
+      </a>
+      <p class="filters__infos--parag">
         Plus de 500 logements sont disponibles dans cette ville
       </p>
-    </section>
+    </article>
   </body>
 </html>
