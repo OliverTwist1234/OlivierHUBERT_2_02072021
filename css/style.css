@@ -161,7 +161,7 @@ h1, p{
   display: flex;
   align-items: center;
   margin: 1.5rem 0.5rem;
-  width: 39.5rem;
+  width: 40rem;
   border-radius: 1.5rem;
   border-top: 0.1rem solid #f2f2f2;
   border-bottom: 0.1rem solid #f2f2f2;
@@ -181,8 +181,8 @@ h1, p{
 }
 
 .search__town--lien{
-  padding-top: 0.8rem;
-  font-size: 2.5rem;
+  padding-top: 1.2rem;
+  font-size: 2rem;
   border-top-left-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
   width: 5rem;
@@ -190,7 +190,7 @@ h1, p{
 }
 
 .search__town--saisie{
-  width: 22.5rem;
+  width: 23rem;
   height: 4.8rem;
   padding-left: 2rem;
   color: black;
@@ -283,6 +283,22 @@ h1, p{
   visibility: hidden;
 }
 
+.filters__themes:hover {
+  cursor: pointer;
+  color: #FFF;
+  background-color:#0065fc;
+  border-color: #0065fc;
+  box-shadow: .2rem .3rem 1rem #000;
+}
+
+input[type="checkbox"] + label{
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label{
+  color: #0065fc;
+}
+
 /*---------------------Filtres infos-----------------------------------------*/
 
 .filters__infos, .filters__infos--lien{
@@ -296,11 +312,11 @@ h1, p{
 }
 
 .filters__infos--lien{
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 2.4rem;
+  height: 2.4rem;
   margin-left: 1rem;
   border: 0.1rem solid #f2f2f2;
-  border-radius: 2.2rem;
+  border-radius: 2.4rem;
   margin-right: .5rem;
 }
 
@@ -310,6 +326,7 @@ h1, p{
   font-size: 1.3rem;
   color: #0065fc;
 }
+
 
 
 
