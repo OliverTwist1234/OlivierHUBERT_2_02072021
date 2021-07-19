@@ -1,4 +1,4 @@
-/*------------------------------------Général--------------------------------------------------*/
+/*****************************************Général**********************************/
 
 *,
 *::before,
@@ -15,21 +15,22 @@ html {
 
 body {
   width: 100%;
+  max-width: 144rem;
+  margin: auto;
   height: 100vh;
   background-color: #fff;
 }
 
-h1{
+h1 {
   font-size: 2.2rem;
-  font-weight: 600;
 }
 
-h2{
-  font-size: 1.7rem;
-  font-weight: 600;
+h2 {
+  font-size: 1.6rem;
 }
 
-nav, p{
+nav,
+p {
   font-size: 1.6rem;
 }
 
@@ -39,47 +40,60 @@ a {
   color: inherit;
 }
 
-a:hover, .search__town--lien:hover, .search__town--recherche:hover {
+a:hover,
+.search__town--lien:hover,
+.search__town--recherche:hover {
   color: #0065fc;
   cursor: pointer;
 }
 
-.container {
+/*.container{
   width: 100%;
   max-width: 144rem;
   margin: auto;
   display: grid;
-  grid-template-columns: 2fr 14fr 31rem 3fr;
-  grid-template-rows: 11rem 16rem 6rem 6rem 69rem;
-  grid-template-areas: "header header menuNav logNav"
-                       "recherche recherche recherche recherche"
-                       "titre filtres filtres filtres"
-                       "filtresInfos filtresInfos filtresInfos filtresInfos"
-                       "hebergements hebergements meilleurs meilleurs";
+  grid-template-columns: 1fr;
+  grid-template-rows: 11rem 1fr;
+  grid-area: "header"
+             "recherche";          
 }
 
-/*------------------------------------Header------------------------------------*/
+/********************************************** HEADER ************************************/
 
 .siteHeader {
-  padding: 4rem 5rem;
+  background-color: #acdda9;
   grid-area: header;
+  width: 100%;
+  max-width: 144rem;
+  margin: auto;
+  height: 11rem;
+  display: grid;
+  grid-template-columns: 1fr 11rem 20rem 18rem;
+  grid-template-rows: 11rem;
+  grid-template-areas: "logo menuNav menuNav logNav";
+}
+.siteHeader__logo {
+  grid-area: logo;
+  width: 16rem;
+  grid-area: logo;
+  padding: 5rem 5rem 3rem;
 }
 
-
-/*-----------------------------Menu de navigation et Lien vers Login-------------------------------------*/
+/*------------Menu de navigation et Lien vers Login---------*/
 
 .menuNav {
   grid-area: menuNav;
 }
-.menuNav__active,
-.menuNav__content,
-.logNav__log {
-  padding: 5rem 3rem ;
-  border-top: 0.2rem solid transparent;
-}
 .logNav {
   grid-area: logNav;
 }
+.menuNav__active,
+.menuNav__content,
+.logNav__log {
+  padding: 5rem 3rem 3.9rem;
+  border-top: 0.2rem solid transparent;
+}
+
 .logNav__log {
   color: #0065fc;
   font-weight: 600;
@@ -90,36 +104,37 @@ a:hover, .search__town--lien:hover, .search__town--recherche:hover {
   border-top: 0.2rem solid #0065fc;
 }
 
+/*--------------------Média queries Header-----------------------*/
+
 @media (max-width: 1199px) {
-  .siteHeader {
-    padding: 2rem 5rem;
+  .siteHeader__logo {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
   }
-  .menuNav__active{
-    padding: 4.5rem 3rem 3rem 4rem;
-  }
-  .menuNav__content,
-  .logNav__log {
-    padding: 4.5rem 3rem 3rem;
-  }
-
-  .search__filters--themes{
-    margin: 0 1rem 1.5rem;
+  .menuNav__active,
+  .menuNav__content, .logNav__log{
+    padding: 5.5rem 3rem 3rem 3rem;
   }
 }
 
 @media (max-width: 767px) {
-  
-  header {
+  .siteHeader {
+    grid-template-columns: 1fr 9rem;
+    grid-template-rows: 10rem 3rem;
+    grid-template-areas:
+      "logo logNav"
+      "menuNav menuNav";
+  }
+  .siteHeader__logo {
     padding: 0 2rem 2rem 2rem;
   }
   .logNav__log {
-    padding: 4rem 2rem 2rem 2rem;
+    padding: 3rem 0 1rem;
   }
-  .menuNav, .menuNav__active,
+  .menuNav,
+  .menuNav__active,
   .menuNav__content {
     display: flex;
     align-items: center;
@@ -131,7 +146,7 @@ a:hover, .search__town--lien:hover, .search__town--recherche:hover {
   .menuNav__active,
   .menuNav__content {
     justify-content: center;
-    padding: 0rem 2rem 1.15rem;
+    padding: 0rem 2rem 1.3rem;
     width: 50%;
   }
   .menuNav__content:hover,
@@ -142,24 +157,38 @@ a:hover, .search__town--lien:hover, .search__town--recherche:hover {
   }
 }
 
-/*----------------------------------------------------Section de recherche------------------------------------------------*/
+/**************************************** SECTION DE RECHERCHE ***************************************/
 
-/*--------------------------Section de recherche par ville----------------------------------*/
+.research{
+  background-color: #dddba9;
+  grid-area: recherche;
+  width: 100%;
+  max-width: 144rem;
+  height: 30rem;
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  grid-template-rows: 16rem 7rem 7rem;
+  grid-template-areas: "searchPart searchPart"
+                       "filtresTitre fitres"
+                       "filtresInfos filtresInfos";
+
+}
+
+/*-----------Recherche par villes et pays------------*/
 
 .search{
-  grid-area: recherche;
-  padding: 1.5rem 5rem;
-}
+  grid-area: searchPart;
+  padding: 2rem 5rem;
 
-h1, p{
-  margin: 0.5rem;
 }
-
+.search__title{
+  padding-bottom: 0.5rem;
+}
 .search__town{
   display: flex;
   align-items: center;
-  margin: 1.5rem 0.5rem;
-  width: 40rem;
+  margin-top: 2rem;
+  width: 42rem;
   border-radius: 1.5rem;
   border-top: 0.1rem solid #f2f2f2;
   border-bottom: 0.1rem solid #f2f2f2;
@@ -188,7 +217,7 @@ h1, p{
 }
 
 .search__town--saisie{
-  width: 23rem;
+  width: 24rem;
   height: 4.8rem;
   padding-left: 2rem;
   color: black;
@@ -204,7 +233,7 @@ h1, p{
   font-weight: 400;
   border-top-right-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
-  width:12rem;
+  width:14rem;
   color:#fff;
 }
 
@@ -212,7 +241,138 @@ h1, p{
   background-color: #DEEBFF;
 }
 
-@media (max-width: 767px){
+/*------------------Recherche par filtres--------------------------*/
+
+.filters{
+  min-width: 103rem;
+  height: 7rem;
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  grid-template-rows: 6rem;
+  grid-template-areas: "filtresTitre filtresCategories";
+  padding: 0 5rem;
+}
+
+.filters__title, .filters__categories, .filters__themes, .filters__lien, .filters__lbl{
+  display: flex;
+  align-items: center;
+}
+
+.filters__title{
+  grid-area: filtresTitre;
+  height: 7rem;
+  margin: 0 0.5rem;
+}
+
+.filters__categories{
+  grid-area: filtresCategories;
+  height: 7rem;
+  justify-content: space-between;
+}
+
+.filters__themes{
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.filters__lien{
+  height: 5rem;
+  width: 5rem;
+  background-color: #DEEBFF;
+  border-radius: 5rem;
+  margin-right: 1rem;
+}
+
+.filters__icon{
+  margin: auto;
+  font-size: 2.2rem;
+  color: #0065fc;
+}
+
+.filters__in{
+  visibility: hidden;
+}
+.filters__lbl{
+  cursor: pointer;
+  border: 0.2rem solid #f2f2f2;
+  border-radius: 5rem;
+  height: 5rem;
+  border-left: 0;
+  padding-right: 2.5rem;
+}
+
+.filters__lbl:hover {
+  cursor: pointer;
+  color: #FFF;
+  background-color:#0065fc;
+  border-color: #0065fc;
+  box-shadow: .2rem .3rem 1rem #000;
+}
+
+.filters__in[type="checkbox"] + .filters__lbl{
+  cursor: pointer;
+}
+
+.filters__in[type="checkbox"]:checked + .filters__lbl{
+  color: #fff;
+  background-color: #0065fc;
+}
+
+/*---------------------Filtres infos------------------------*/
+
+.filters__infos, .filters__infos--lien, .filters__infos--parag{
+  display: flex;
+  align-items: center;  
+}
+
+.filters__infos{
+  grid-area: filtresInfos;
+  padding: 0rem 5.5rem;
+}
+
+.filters__infos--lien{
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0.1rem solid #f2f2f2;
+  border-radius: 2.4rem;
+  margin-right: .5rem;
+}
+
+.filters__infos--icon{
+  margin: auto;
+  font-size: 1.3rem;
+  color: #0065fc;
+}
+
+@media (max-width: 991px){
+  .research{
+    background-color: #dddba9;
+    height: 33rem;
+    grid-template-rows: 16rem 4rem 6rem 7rem;
+    grid-template-areas: "searchPart searchPart"
+                         "filtresTitre fitresTitre"
+                         "filtresCategories filtresCategories"
+                         "filtresInfos filtresInfos";
+  
+  }
+  .filters{
+    min-width: 93rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4rem 6rem;
+    grid-template-areas: "filtresTitre"
+                         "filtresCategories";
+  }
+  .filters__title{
+    height: 4rem;
+  }
+  .filters__categories{
+    height: 6rem;
+  }
+  .filters__themes, .lodging__lien{
+    justify-content: space-around;
+  }
+}
+/*@media (max-width: 767px){
   .search{
     padding: 2rem 2rem;
   }
@@ -236,105 +396,23 @@ h1, p{
   }
 }
 
-/*-----------------------------Section de recherche par filtres-------------------------------------------*/
- 
-.filters, .filters__titre, .filters__themes, .filters__lien, .filters__icon {
-  display: flex;
-  align-items: center;
-  height: 5rem;
-}
+/****************************************Section Hébergements*****************************************/
 
-.filters__titre{
-  grid-area: titre;
-  padding-left: 4rem;
-  padding-right: 2.5rem;
-}
-
-.filters{
-  padding: 0rem 2rem;
-}
-
-.filters__categories{
-  grid-area: filtres;
-  display: flex;
-}
-.filters__themes{
-  padding-right: 2rem;
-  margin-right: 2.5rem;
-  font-size: 1.7rem;
-  font-weight: 600;
-  border: 0.2rem solid #f2f2f2;
-  border-left: 0;
-  border-radius: 5rem;
-}
-
-.filters__lien{
-  width: 5rem;
-  background-color: #DEEBFF;
-  border-radius: 5rem;
-}
-
-.filters__icon{
-  margin: auto;
-  font-size: 2.2rem;
-  color: #0065fc;
-}
-
-.filters__in{
-  visibility: hidden;
-}
-
-.filters__themes:hover {
-  cursor: pointer;
-  color: #FFF;
-  background-color:#0065fc;
-  border-color: #0065fc;
-  box-shadow: .2rem .3rem 1rem #000;
-}
-
-input[type="checkbox"] + label{
-  cursor: pointer;
-}
-
-input[type="checkbox"]:checked + label{
-  color: #0065fc;
-}
-
-/*---------------------Filtres infos-----------------------------------------*/
-
-.filters__infos, .filters__infos--lien{
-  display: flex;
-  align-items: center;
-}
-
-.filters__infos{
-  grid-area: filtresInfos;
-  padding: 0rem 5rem;
-}
-
-.filters__infos--lien{
-  width: 2.4rem;
-  height: 2.4rem;
-  margin-left: 1rem;
-  border: 0.1rem solid #f2f2f2;
-  border-radius: 2.4rem;
-  margin-right: .5rem;
-}
-
-.filters__infos--icon{
-  display: flex;
-  margin: auto;
-  font-size: 1.3rem;
-  color: #0065fc;
-}
-
-/*------------------------Section Hébergements---------------------------------*/
+/*------------------div Hébergements principale---------------------------*/
 
 .lodging{
+  background-color: #ddb5a9;
+  width: 100%;
+  max-width: 144rem;
+  height: 67rem;
+  padding: 2.5rem 5rem;
+}
+
+.lodging__heberg{
   grid-area: hebergements;
-  max-width: 95rem;
+  max-width: 88rem;
+  height: 62.5rem;
   padding: 4rem;
-  margin: 1.5rem 2rem 5rem 5rem;
   background-color: #f2f2f2;
   border-radius: 1.5rem;
 }
@@ -343,8 +421,10 @@ input[type="checkbox"]:checked + label{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 88rem;
-  height: 23rem;
+  flex-wrap: wrap;
+  max-width: 80rem;
+  height: 46rem;
+  overflow: hidden;
 }
 
 .lodging__cards--hotels{
@@ -373,7 +453,9 @@ input[type="checkbox"]:checked + label{
 .lodging__cards--titre, .lodging__cards--parag, .lodging__cards--icon{
   margin: 0.5rem 1rem;
 }
-
+.lodging__cards--icon{
+  font-size: 1.4rem;
+}
 .starB{
   color: #0065fc;
 }
@@ -383,11 +465,8 @@ input[type="checkbox"]:checked + label{
 }
 
 .lodging__lien{
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   font-size: 1.8rem;
   font-weight: 600;
 }
-
-
-
 
