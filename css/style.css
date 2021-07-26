@@ -50,7 +50,8 @@ h4 {
 }
 
 nav,
-p {
+p,
+li {
   font-size: 1.6rem;
 }
 
@@ -65,10 +66,16 @@ a {
   color: inherit;
 }
 
+li {
+  list-style-type: none;
+}
+
 a:hover,
-.search__town--recherche:hover {
+.search__town--recherche:hover,
+.filters__lbl:hover {
   color: var(--color1);
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .best__cards--hotels,
@@ -80,26 +87,6 @@ a:hover,
 .activities__cards4-1--lien,
 .activities__cards4-2--lien {
   box-shadow: 0.1rem 0.5rem 0.5rem var(--color7);
-}
-
-.siteHeader__logo,
-.menuNav__heberg,
-.menuNav__activ,
-.logNav__log,
-.search__town--lien,
-.search__town--recherche,
-.filters__lien,
-.filters__lbl,
-.lodging__cards--hotels,
-.best__cards--hotels,
-.lodging__cards--hotels,
-.activities__cards1--lien,
-.activities__cards2-1--lien,
-.activities__cards2-2--lien,
-.activities__cards3--lien,
-.activities__cards4-1--lien,
-.activities__cards4-2--lien {
-  transition: 0.2s;
 }
 
 .lodging__cards--hotels:hover,
@@ -221,7 +208,7 @@ a:hover,
   }
 }
 
-/**************************************** SECTION DE RECHERCHE ***************************************/
+/**************************************** PARTIE RECHERCHE ***************************************/
 
 .search {
   display: grid;
@@ -484,7 +471,7 @@ a:hover,
   }
 }
 
-/****************************************Partie Hébergements*****************************************/
+/****************************************PARTIE HÉBERGEMENTS*****************************************/
 
 /*------------------Hébergements principale---------------------------*/
 
@@ -557,9 +544,13 @@ a:hover,
   color: var(--color3);
 }
 
-.lodging__lien {
+.lodging__affich {
   margin-top: 2.5rem;
   font-weight: 600;
+}
+
+.lodging__affich--lien:hover{
+  transform: scale(1.1);
 }
 
 /*-----------Aside Les plus populaires-------------------*/
@@ -631,6 +622,10 @@ a:hover,
 }
 .best__cards--icon {
   font-size: 1.2rem;
+}
+
+.best__icon:hover{
+  transform: scale(1.2);
 }
 
 /*--------------média quéries partie Hébergements---------------*/
@@ -913,7 +908,6 @@ a:hover,
 }
 
 @media (max-width: 1199px) {
-
   .activities__container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 25.8rem 25.8rem;
@@ -922,7 +916,8 @@ a:hover,
       "cards3 cards4";
   }
 
-  .activities__titre, .activities__container {
+  .activities__titre,
+  .activities__container {
     margin: 2rem 0;
   }
 
@@ -948,10 +943,10 @@ a:hover,
 }
 
 @media (max-width: 1023px) {
-  .activities{
+  .activities {
     padding: 2rem 2rem;
   }
-  
+
   .activities,
   .activities__cards1,
   .activities__cards2,
@@ -963,4 +958,40 @@ a:hover,
   .activities__cards3--lien {
     background-color: var(--color4);
   }
+}
+
+/********************************************FOOTER*************************************************************/
+
+.siteFooter {
+  width: 100%;
+  height: 21.4rem;
+  padding: 4rem 5rem;
+  background-color: var(--color3);
+  display: flex;
+  align-items: flex-start;
+}
+
+.siteFooter__propos,
+.siteFooter__heberg,
+.siteFooter__assist{
+  width: 45rem;
+  height: 13rem;
+}
+
+.siteFooter__propos--titre,
+.siteFooter__heberg--titre,
+.siteFooter__assist--titre{
+  margin-bottom: 2rem;
+}
+
+.siteFooter__propos--listelement,
+.siteFooter__heberg--listelement,
+.siteFooter__assist--listelement{
+  margin-bottom: 1rem;
+}
+
+.siteFooter__propos--lien:hover,
+.siteFooter__heberg--lien:hover,
+.siteFooter__assist--lien:hover{
+  transform: scale(1.05);
 }
