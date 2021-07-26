@@ -162,7 +162,7 @@ a:hover,
   letter-spacing: 0.05rem;
 }
 
-/*--------------------Média queries Header-----------------------*/
+/*--------------------Média Queries Header-----------------------*/
 
 @media (max-width: 1199px) {
   .siteHeader__logo {
@@ -417,6 +417,8 @@ a:hover,
   color: var(--color1);
 }
 
+/*-----------------Média Quéries Partie Recherche-------------------------*/
+
 @media (max-width: 1199px) {
   .filters__themes {
     margin-right: 0;
@@ -426,6 +428,7 @@ a:hover,
 @media (max-width: 1023px) {
   header,
   footer,
+  main,
   .search {
     padding: 0 2rem;
   }
@@ -521,16 +524,18 @@ a:hover,
   background-color: var(--color4);
 }
 
-.lodging__cards--images {
+.lodging__cards--images,
+.lodging__cards--photo {
   width: 23.6rem;
   height: 11.5rem;
+}
+.lodging__cards--images {
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
 }
 
 .lodging__cards--photo {
-  width: 100%;
-  height: 11.5rem;
+  object-fit: cover;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
@@ -575,7 +580,8 @@ a:hover,
   justify-content: space-between;
 }
 
-.best__cards, .best__cards--hotels{
+.best__cards,
+.best__cards--hotels {
   width: 34rem;
 }
 
@@ -583,7 +589,6 @@ a:hover,
   height: 50rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .best__cards--hotels {
@@ -599,7 +604,8 @@ a:hover,
   justify-content: flex-start;
 }
 
-.best__cards--images, .best__cards--photo{
+.best__cards--images,
+.best__cards--photo {
   width: 13rem;
   height: 13.5rem;
 }
@@ -609,6 +615,7 @@ a:hover,
 }
 
 .best__cards--photo {
+  object-fit: cover;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
@@ -642,25 +649,26 @@ a:hover,
 }
 
 @media (max-width: 1199px) {
+  .lodging__cards--hotels {
+    width: 32.5rem;
+  }
+  .lodging__cards--images,
+  .lodging__cards--photo {
+    width: 31.5rem;
+  }
+  .lodging__cards--photo {
+    object-fit: cover;
+  }
   .lodging__cards--hotels3,
   .lodging__cards--hotels4 {
     display: none;
-  }
-  .lodging__cards--hotels {
-    width: 33.5rem;
-  }
-  .lodging__cards--images {
-    width: 32.5rem;
-  }
-  .lodging__cards--photo {
-    width: 100%;
   }
 }
 
 @media (max-width: 1023px) {
   .lodging {
     grid-template-columns: 1fr;
-    grid-template-rows: 26rem 67rem;
+    grid-template-rows: 26rem 60rem;
     grid-template-areas:
       "meilleurs"
       "hebergements";
@@ -834,4 +842,125 @@ a:hover,
 }
 .activities__cards4-2--photo {
   height: 15.5rem;
+}
+
+/*-------------------Média Quéries Partie Activités----------------------*/
+
+@media (max-width: 1399px) {
+  .activities__container {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 25.8rem 25.8rem;
+    grid-template-areas:
+      "cards1 cards2"
+      "cards3 cards4";
+  }
+
+  .activities__cards1,
+  .activities__cards3,
+  .activities__cards2-1,
+  .activities__cards2-2,
+  .activities__cards4-1,
+  .activities__cards4-2,
+  .activities__cards1--lien,
+  .activities__cards2-1--lien,
+  .activities__cards2-2--lien,
+  .activities__cards3--lien,
+  .activities__cards4-1--lien,
+  .activities__cards4-2--lien {
+    max-width: 32.5rem;
+    height: 19rem;
+  }
+
+  .activities__cards1--photo,
+  .activities__cards3--photo,
+  .activities__cards2-1--photo,
+  .activities__cards2-2--photo,
+  .activities__cards4-1--photo,
+  .activities__cards4-2--photo {
+    width: 32.5rem;
+    height: 13.5rem;
+  }
+
+  .activities__cards1,
+  .activities__cards3 {
+    margin: 0;
+    max-width: 44.66rem;
+  }
+
+  .activities__cards2,
+  .activities__cards4 {
+    max-width: 89.33rem;
+    height: 19rem;
+    margin: 0;
+    margin-left: 5rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .activities__cards1 {
+    grid-area: cards1;
+  }
+  .activities__cards2 {
+    grid-area: cards2;
+  }
+
+  .activities__cards3 {
+    grid-area: cards3;
+  }
+  .activities__cards4 {
+    grid-area: cards4;
+  }
+}
+
+@media (max-width: 1199px) {
+
+  .activities__container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 25.8rem 25.8rem;
+    grid-template-areas:
+      "cards1 cards2"
+      "cards3 cards4";
+  }
+
+  .activities__titre, .activities__container {
+    margin: 2rem 0;
+  }
+
+  .activities__cards2-2,
+  .activities__cards4-2 {
+    display: none;
+  }
+
+  .activities__cards1,
+  .activities__cards3,
+  .activities__cards2,
+  .activities__cards4 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .activities__cards2,
+  .activities__cards4 {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .activities{
+    padding: 2rem 2rem;
+  }
+  
+  .activities,
+  .activities__cards1,
+  .activities__cards2,
+  .activities__cards3,
+  .activities__cards4 {
+    background-color: var(--color3);
+  }
+  .activities__cards1--lien,
+  .activities__cards3--lien {
+    background-color: var(--color4);
+  }
 }
