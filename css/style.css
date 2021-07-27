@@ -751,7 +751,7 @@ a:hover,
     display: block;
   }
   .best__cards {
-    padding-top: 1rem;
+    padding-top: 2rem;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -919,7 +919,9 @@ a:hover,
   height: 15.5rem;
 }
 
-/*-------------------Média Quéries Partie Activités----------------------*/
+/**************************************** Média Quéries Partie Activités *******************************/
+
+/*----------------------Ordinateurs Portables------------------------*/
 
 @media (max-width: 1399px) {
   .activities__container {
@@ -1022,6 +1024,8 @@ a:hover,
   }
 }
 
+/*---------------------------- Tablettes -----------------------------*/
+
 @media (max-width: 1023px) {
   .activities {
     padding: 2rem 2rem;
@@ -1037,6 +1041,54 @@ a:hover,
   .activities__cards1--lien,
   .activities__cards3--lien {
     background-color: var(--color4);
+  }
+}
+
+/*--------------------------- Mobiles -------------------------------*/
+
+@media (max-width: 767px){
+  .activities,
+  .activities__cards1,
+  .activities__cards2,
+  .activities__cards3,
+  .activities__cards4 {
+    background-color: var(--color4);
+  }
+  .activities__cards1--lien,
+  .activities__cards3--lien {
+    background-color: var(--color4);
+  }
+  .activities {
+    grid-template-rows: 6rem 131.5rem;
+  }
+  .activities__container {
+    display: block;
+  }
+  .activities__cards2-2,
+  .activities__cards4-2 {
+    display: block;
+  }
+  .activities__cards1,
+  .activities__cards3,
+  .activities__cards2,
+  .activities__cards4{
+    display: block;
+  }
+  .activities__container{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr 2fr;
+    grid-template-areas: "cards1"
+                         "cards2"
+                         "cards3"
+                         "cards4";
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+  }
+  .activities__cards2-2,
+  .activities__cards4-2{
+    margin-top: 3rem;
   }
 }
 
