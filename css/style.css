@@ -509,7 +509,7 @@ a:hover,
   }
 }
 
-/****************************************PARTIE HÉBERGEMENTS*****************************************/
+/*//////////////////////////////////////// PARTIE HÉBERGEMENTS ///////////////////////////////////////////*/
 
 /*------------------Hébergements principale---------------------------*/
 
@@ -666,15 +666,17 @@ a:hover,
   transform: scale(1.2);
 }
 
-/*--------------média quéries partie Hébergements---------------*/
+/******************************* Média queries partie Hébergements ******************************/
+
+/*---------------------------------Ordinateurs-------------------------------*/
 
 @media (max-width: 1399px) {
   .lodging__cards {
     justify-content: space-around;
     max-width: 130rem;
     height: 46rem;
-    overflow: hidden;
   }
+
   .lodging__cards--hotels5,
   .lodging__cards--hotels6 {
     display: none;
@@ -697,6 +699,8 @@ a:hover,
     display: none;
   }
 }
+
+/*----------------------- Format Tablettes -------------------*/
 
 @media (max-width: 1023px) {
   .lodging {
@@ -730,6 +734,47 @@ a:hover,
   }
   .lodging__cards--hotels3,
   .lodging__cards--hotels4 {
+    display: block;
+  }
+}
+
+/*-------------------------Format mobiles-------------------------*/
+
+@media (max-width: 767px){
+  .lodging {
+    grid-template-rows: 58rem 141.5rem;
+  }
+  .best {
+    height: 58rem;
+  }
+  .best__cards--hotels3 {
+    display: block;
+  }
+  .best__cards {
+    padding-top: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .best__cards--hotels {
+    max-width: 32.5rem;
+    height: 14.5rem;
+    margin: 0;
+  }
+  .lodging__heberg {
+    max-width: 100%;
+    height: 140rem;
+  }
+  .lodging__cards {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    height: 130rem;
+  }
+  .lodging__cards--hotels5,
+  .lodging__cards--hotels6 {
     display: block;
   }
 }
