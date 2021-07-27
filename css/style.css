@@ -1,4 +1,4 @@
-/***************************************** GÉNÉRAL **********************************/
+/*/////////////////////////////////////////// GÉNÉRAL ////////////////////////////////////////////*/
 
 :root {
   --color1: #0065fc;
@@ -101,7 +101,7 @@ a:hover,
   box-shadow: 0.1rem 0.5rem 0.5rem var(--color8);
 }
 
-/********************************************** HEADER ************************************/
+/*//////////////////////////////////////////////////// HEADER ///////////////////////////////////////////*/
 
 .siteHeader {
   display: grid;
@@ -120,7 +120,7 @@ a:hover,
   transform: scale(1.1);
 }
 
-/*------------Menu de navigation et Lien vers Login---------*/
+/*****************Menu de navigation et Lien vers Login*********************/
 
 .menuNav {
   grid-area: menuNav;
@@ -149,7 +149,9 @@ a:hover,
   letter-spacing: 0.05rem;
 }
 
-/*--------------------Média Queries Header-----------------------*/
+/************************* Média Queries Header *******************************/
+
+/*----Ordinateurs portables-----------*/
 
 @media (max-width: 1199px) {
   .siteHeader__logo {
@@ -164,11 +166,15 @@ a:hover,
   }
 }
 
+/*-----Tablettes--------------*/
+
 @media (max-width: 1023px) {
   .siteHeader {
     grid-template-columns: 1fr 31rem 11rem;
   }
 }
+
+/*---------Mobiles----------*/
 
 @media (max-width: 767px) {
   .siteHeader {
@@ -208,7 +214,7 @@ a:hover,
   }
 }
 
-/**************************************** PARTIE RECHERCHE ***************************************/
+/*/////////////////////////////////////////// PARTIE RECHERCHE ////////////////////////////////////////*/
 
 .search {
   display: grid;
@@ -404,13 +410,17 @@ a:hover,
   color: var(--color1);
 }
 
-/*-----------------Média Quéries Partie Recherche-------------------------*/
+/**************************** Média Quéries Partie Recherche ***********************************/
+
+/*--------------------format ordinateurs portables--------------------------*/
 
 @media (max-width: 1199px) {
   .filters__themes {
     margin-right: 0;
   }
 }
+
+/*-------------------Format Tablettes-------------------------*/
 
 @media (max-width: 1023px) {
   header,
@@ -450,6 +460,8 @@ a:hover,
   }
 }
 
+/*-------------------format Mobiles-------------------------*/
+
 @media (max-width: 767px) {
   .search__town {
     width: 34rem;
@@ -468,6 +480,32 @@ a:hover,
     color: var(--color4);
     width: 5rem;
     border-radius: 1.5rem;
+  }
+}
+
+@media (max-width: 619px){
+  .search {
+    grid-template-rows: 19rem 16rem 7rem;
+  }
+}
+
+@media (max-width: 504px){
+  .search {
+    grid-template-rows: 19rem 22rem 14.5rem;
+  }
+  .filters {
+    grid-template-rows: 4rem 18rem;
+  }
+  .filters__infos--lien, .filters__infos--icon{
+    display: block;
+  }
+
+  .filters__infos--lien{
+    position: relative;
+    top: -0.5rem;
+  }
+  .filters__infos--icon{
+    margin-top: 0.5rem;
   }
 }
 
