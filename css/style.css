@@ -828,13 +828,10 @@ a:hover,
   height: 14rem;
 }
 
-.activities__cards4-2 {
+.activities__cards4-2, .activities__cards4-2--lien {
   height: 21rem;
 }
 
-.activities__cards4-2--lien {
-  height: 21rem;
-}
 .activities__cards4-2--photo {
   height: 15.5rem;
 }
@@ -994,4 +991,20 @@ a:hover,
 .siteFooter__heberg--lien:hover,
 .siteFooter__assist--lien:hover{
   transform: scale(1.05);
+}
+
+/*------------------------------Média Quéries Footer-------------------------*/
+
+@media (max-width: 1023px){
+  .siteFooter{
+    background-color: var(--color4);
+    padding: 4rem 2rem;
+    justify-content: space-between;
+  }
+  .siteFooter__heberg--titre, .siteFooter__heberg--liste{
+    text-align: center;
+  }
+  .siteFooter__assist--titre, .siteFooter__assist--liste{
+    text-align: right;
+  }
 }
