@@ -366,6 +366,8 @@ a:hover,
   height: 5rem;
   border-left: 0;
   padding-right: 2rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
 }
 
@@ -380,6 +382,10 @@ a:hover,
 .filters__in[type="checkbox"]:checked + .filters__lbl {
   color: var(--color4);
   background-color: var(--color1);
+}
+
+.filters__in[type="checkbox"]:active + .filters__lbl {
+  transform: scale(1.2);
 }
 
 /*---------------------Filtres infos------------------------*/
