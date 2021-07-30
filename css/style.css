@@ -516,6 +516,15 @@ a:hover,
   }
 }
 
+@media (max-width: 419px) {
+  .search {
+    grid-template-rows: 19rem 28rem 14.5rem;
+  }
+  .filters {
+    grid-template-rows: 4rem 24rem;
+  }
+}
+
 /*//////////////////////////////////////// PARTIE HÉBERGEMENTS ///////////////////////////////////////////*/
 
 /*------------------Hébergements principale---------------------------*/
